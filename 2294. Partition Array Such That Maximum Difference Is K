@@ -1,0 +1,12 @@
+class Solution(object):
+    def partitionArray(self, nums, k):
+        nums.sort()
+        j = nums[0]
+        count = 1
+
+        for i in nums:
+            if i - j > k:
+                count += 1
+                j = i
+
+        return count
